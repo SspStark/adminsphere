@@ -1,0 +1,40 @@
+# Dependencies
+**/node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build output
+**/.next/
+**/dist/
+**/build/
+**/out/
+**/coverage/
+
+# Logs
+**/logs/
+*.log
+
+# Runtime
+**/.tmp/
+**/temp/
+**/tmp/
+
+# Uploads
+**/uploads/
+
+# Editor and system files
+.vscode/
+.idea/
+.DS_Store
+
+# Vercel
+.vercel/
+
+# Testing
+**/coverage/
+
+# TypeScript
+**/*.tsbuildinfo
