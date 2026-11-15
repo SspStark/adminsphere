@@ -1,0 +1,57 @@
+{
+  "name": "adminsphere-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "dev": "nodemon",
+    "start": "node server.js",
+    "check": "node --check server.js",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "bcryptjs": "^3.0.3",
+    "bullmq": "^6.3.8",
+    "cloudinary": "^2.8.0",
+    "cookie": "^1.1.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "ejs": "^4.0.1",
+    "exceljs": "^4.4.0",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "express-validator": "^7.3.1",
+    "google-auth-library": "^10.5.0",
+    "helmet": "^8.1.0",
+    "ioredis": "^6.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.0.0",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^9.0.5",
+    "puppeteer": "^25.8.0",
+    "redis": "^5.10.0",
+    "socket.io": "^4.8.1",
+    "streamifier": "^0.1.1",
+    "winston": "^3.19.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.4.1",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.8.4",
+    "vitest": "^5.0.3"
+  }
+}

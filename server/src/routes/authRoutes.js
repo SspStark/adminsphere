@@ -1,0 +1,30 @@
+import express from 'express';
+import {
+  login,
+  logout,
+  getMe,
+  forgotPassword,
+  resetPassword,
+  googleAuth,
+  googleOAuthLogin,
+  refresh,
+} from '../controllers/authController.js';
+import { authMiddleware } from '../middlewares/authMiddleware.js';
+import { rateLimiter } from '../middlewares/rateLimiter.js';
+
+const router = express.Router();
+
+router.post('/login', rateLimiter({ keyPrefix: 'login', limit: 5, windowSeconds: 15 * 60 }), login);
+router.post('/logout', logout);
+router.get('/me', authMiddleware, getMe);
+router.post('/forgot-password', rateLimiter({ keyPrefix: 'login', limit: 3, windowSeconds: 15 * 60 }), forgotPassword);
+router.post('/reset-password', resetPassword);
+router.get('/google', rateLimiter({ keyPrefix: 'login', limit: 10, windowSeconds: 15 * 60 }), googleAuth);
+router.get(
+  '/google/callback',
+  rateLimiter({ keyPrefix: 'login', limit: 10, windowSeconds: 15 * 60 }),
+  googleOAuthLogin
+);
+router.post('/refresh', refresh);
+
+export default router;
